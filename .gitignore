@@ -58,4 +58,5 @@ yarn-error.log*
 
 .env
 .env-*
-/ddd-doc/public/pagefind
+# github pages does not like this:
+# /ddd-doc/public/pagefind
