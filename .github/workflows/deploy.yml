@@ -44,7 +44,7 @@ jobs:
         with:
           # Use the automatically provided token, NOT a personal access token
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ddd-doc/out
+          publish_dir: ./ddd-doc/dist
           enable_jekyll: false
           # Force push to keep the gh-pages branch history clean
           force_orphan: true
