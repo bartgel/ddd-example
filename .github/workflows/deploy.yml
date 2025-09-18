@@ -4,43 +4,47 @@ on:
   push:
     branches: [ main ]
 
+# Add permissions for the GITHUB_TOKEN at the job level
+permissions:
+  contents: write # This is crucial for pushing to the gh-pages branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
-    # This is the key addition: set the default working directory
     defaults:
       run:
-        working-directory: ./ddd-doc  # All steps will now run from this folder
+        working-directory: ./ddd-doc
 
     steps:
       # Step 1: Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important: fetches all history and branches
 
-      # Step 2: Set up Node.js (this doesn't need to run inside the ddd-doc folder)
+      # Step 2: Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-          # Tell the cache to look for package-lock.json in the ddd-doc folder
           cache-dependency-path: './ddd-doc/package-lock.json'
 
       # Step 3: Install your project dependencies
-      # The 'working-directory' set above means this will automatically run in /ddd-doc
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build the EventCatalog (runs from /ddd-doc)
+      # Step 4: Build the EventCatalog
       - name: Build
         run: npm run build
 
-      # Step 5: Deploy
+      # Step 5: Deploy 🚀
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # Use the automatically provided token, NOT a personal access token
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The publish_dir is now relative to the project root, so point to /ddd-doc/out
           publish_dir: ./ddd-doc/out
           enable_jekyll: false
+          # Force push to keep the gh-pages branch history clean
+          force_orphan: true
