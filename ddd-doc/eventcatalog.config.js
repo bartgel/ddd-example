@@ -2,9 +2,9 @@
 export default {
   title: 'EventCatalog',
   tagline: 'This internal platform provides a comprehensive view of our event-driven architecture across all systems. Use this portal to discover existing domains, explore services and their dependencies, and understand the message contracts that connect our infrastructure',
-  organizationName: 'bart',
-  homepageLink: 'https://eventcatalog.dev/',
-  editUrl: 'https://github.com/boyney123/eventcatalog-demo/edit/master',
+  organizationName: 'DDD example',
+  homepageLink: 'https://bartgel.github.io/ddd-example/',
+  editUrl: 'https://github.com/bartgel/ddd-example/edit/master',
   // Supports static or server. Static renders a static site, server renders a server side rendered site
   // large catalogs may benefit from server side rendering
   output: 'static',
@@ -13,6 +13,17 @@ export default {
   // Change to make the base url of the site different, by default https://{website}.com/docs,
   // changing to /company would be https://{website}.com/company/docs,
   base: '/ddd-example/',
+  components: {
+    // This might be the correct way to override components
+    Header: './components/Header.astro'
+  },
+  headerLinks: [
+    { label: 'github', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'Domains', href: '/domains' },
+    { label: 'Visualiser', href: '/visualiser' },
+    { label: '3D Node Graph', href: '/overview' },
+  ],
   // Customize the logo, add your logo to public/ folder
   logo: {
     alt: 'EventCatalog Logo',
