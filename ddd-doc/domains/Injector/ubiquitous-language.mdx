@@ -1,0 +1,139 @@
+---
+dictionary:
+  - id: Dependency
+    name: Dependency
+    summary: "A service, component, or value that a class requires to function."
+    description: |
+      # Dependency
+
+      A **Dependency** is any external requirement that a class or component needs to perform its duties. Instead of creating these dependencies itself (using `new`), a class declares what it needs, and the **Container** is responsible for providing them.
+
+      This promotes loose coupling, as classes depend on abstractions (interfaces) rather than concrete implementations.
+
+      ## Example
+      A `UserService` might depend on a `UserRepository` to access the database.
+      ```java
+      public class UserService {
+          private final UserRepository userRepo; // This is a dependency
+
+          public UserService(UserRepository userRepo) { // Dependency is injected
+              this.userRepo = userRepo;
+          }
+      }
+      ```
+    icon: Puzzle
+
+  - id: Injection
+    name: Injection
+    summary: "The process of providing a Dependency to a class that requires it."
+    description: |
+      # Injection
+
+      **Injection** is the mechanism by which a **Dependency** is supplied to a dependent class. The class does not build or find its dependencies; they are "injected" into it by the **Container**, typically through a constructor, a setter method, or a field.
+
+      **Constructor Injection** (as shown in the example) is generally preferred for its clarity and ability to enforce immutable, fully-initialized objects.
+
+      ## How It Works
+      1. The **Container** performs **Resolution** to obtain an instance of `UserRepository`.
+      2. The container then *injects* this instance as an argument when creating the `UserService`.
+      ```java
+      // The Container handles this internally:
+      UserRepository repo = ... // resolved
+      UserService service = new UserService(repo); // injection
+      ```
+    icon: Syringe
+
+  - id: Singleton
+    name: Singleton
+    summary: "A lifecycle strategy where a single instance of a Dependency is created and reused for all requests."
+    description: |
+      # Singleton
+
+      A **Singleton** is a scoping lifecycle where the **Container** creates exactly one instance of a dependency and reuses that same instance for every subsequent **Resolution** request. This is efficient for stateless services, configuration objects, or connections that are expensive to create.
+
+      It is the most common scope for application-wide services.
+
+      ## Behavior
+      - **First Resolution:** The container creates a new instance.
+      - **All Later Resolutions:** The container returns the same, previously created instance.
+      ```java
+      // First call to container.get(MyService.class)
+      -> new MyService() is created and cached.
+
+      // Second call to container.get(MyService.class)
+      -> the same cached instance is returned.
+      ```
+    icon: Cube
+
+  - id: Scope
+    name: Scope
+    summary: "A defined lifecycle context that governs the reuse and lifetime of resolved Dependencies."
+    description: |
+      # Scope
+
+      A **Scope** defines the lifespan of a resolved object. It dictates when a new instance of a **Dependency** is created and when an existing instance can be reused.
+
+      **Singleton** is the most common scope, but others are crucial for stateful or request-specific dependencies.
+
+      ## Common Scopes
+      - **Singleton:** One instance per application lifetime.
+      - **Request/Thread:** One instance per HTTP request or thread.
+      - **Transient/Prototype:** A new instance is created for every **Resolution**.
+
+      The **Container** is responsible for managing the instances within each scope, creating them and disposing of them when the scope ends.
+    icon: Container
+
+  - id: Resolution
+    name: Resolution
+    summary: "The process by which the Container finds or creates the concrete instance of a requested Dependency."
+    description: |
+      # Resolution
+
+      **Resolution** is the core process executed by the **Container**. It is the act of satisfying a dependency request. When a component needs a `MyService`, the container's job is to *resolve* that dependency by finding the correct implementation, managing its **Scope**, performing any necessary **Injection** on *it*, and finally returning the fully-built instance.
+
+      This process is often recursive: to resolve `ClassA`, the container must first resolve `ClassB` and `ClassC` so they can be injected into `ClassA`'s constructor.
+
+      ## The Resolution Algorithm
+      1. **Identify:** Receive a request for a type (e.g., `MyService.class`).
+      2. **Scope Check:** Check if a valid instance already exists in the target **Scope** (e.g., a **Singleton** cache). If found, return it.
+      3. **Create:** If no instance exists, instantiate the concrete class.
+      4. **Inject:** Recursively **Resolve** all of the new object's dependencies and **Inject** them (e.g., via constructor).
+      5. **Store & Return:** Store the new instance in its appropriate scope (if applicable) and return it to the requester.
+    icon: Search
+
+  - id: Container
+    name: Container
+    summary: "The central component that manages Dependencies, their Scopes, and performs Injection and Resolution."
+    description: |
+      # Container
+
+      The **Container** (or Injector) is the heart of the Dependency Injection system. It is a registry that knows about all components, their **Dependencies**, and their **Scopes**.
+
+      Its primary responsibilities are **Resolution** and **Injection**. Clients ask the container for objects, and the container builds them, wiring up the entire object graph automatically.
+
+      ## Responsibilities
+      - **Registration:** Knowing which implementation to use for an interface.
+      - **Lifecycle Management:** Creating and caching objects according to their **Scope**.
+      - **Graph Building:** Recursively **Resolving** an entire tree of dependencies.
+      - **Injection:** Supplying dependencies to the classes that need them.
+    icon: Box
+
+  - id: Binding
+    name: Binding
+    summary: "The configuration that tells the Container how to resolve an abstraction to a concrete implementation."
+    description: |
+      # Binding
+
+      A **Binding** is a rule defined in the container that maps a requested type (often an interface) to the concrete implementation that should be provided when that type is requested during **Resolution**.
+
+      Bindings can also define the **Scope** for the implementation.
+
+      ## Example
+      This tells the container: "When someone asks for `UserRepository`, create and return an instance of `SqlUserRepository` and manage it as a **Singleton**."
+      ```java
+      container.bind(UserRepository.class)
+               .to(SqlUserRepository.class)
+               .in(SingletonScope.class);
+      ```
+    icon: Link
+---

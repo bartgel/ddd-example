@@ -1,0 +1,3 @@
+com.bart.example.infrastructure.webserving.ports.WebservingProcessorPort
+com.bart.example.infrastructure.injector.port.InjectorProcessorPort
+com.bart.example.infrastructure.json.ports.JsonProcessor

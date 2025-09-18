@@ -1,0 +1,56 @@
+---
+id: Injector
+name: Injector
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+  - id: InjectorProcessorPort
+    version: 0.0.1
+entities:
+  - id: DependencyInjectorData
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: InjectorProcessorPort
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+Parts of this Module will be build on compile time
+:::
+
+This module will create dependencyinjection
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/full-stack" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the Dependency Injection sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the dependency injection Subdomain.
+
+<EntityMap id="Injector" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />

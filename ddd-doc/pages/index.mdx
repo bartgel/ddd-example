@@ -1,0 +1,83 @@
+---
+id: index
+---
+
+# The Vision
+
+This project is an opinionated, high-performance application framework designed for the modern cloud. We provide the developer experience and productivity of Spring Boot but are built from the ground up for environments where startup time, memory footprint, and runtime performance are critical: Kubernetes, serverless functions, and high-scale microservices.
+
+Primary goal is to serve as an example on how to modernise, very strong, amazing frameworks and make it better.
+
+We respect what Spring Boot has achieved for the Java ecosystem, but believe it's time for a new approach tailored to today's challenges.
+
+## Our Principles
+
+- Performance by Default: Achieved through compile-time code generation (no runtime reflection), efficient binary protocols (SBE/JSON), and a lean, non-blocking core based on Java's built-in HttpServer.
+- Clarity over Magic: We avoid runtime magic. What you see in your code is what gets executed. This leads to predictable performance, simpler debugging, and clean stack traces.
+- Modern by Design: First-class support for Domain-Driven Design (DDD), Hexagonal Architecture, API-First development, and built-in observability with first-class traceability.
+- The Stateful Microservice, Reimagined: Go beyond simple CRUD. Our optional, integrated storage engine provides a fault-tolerant, event-sourced state layer with lightning-fast in-memory access, built-in replication, and horizontal scalability right out of the box.
+
+## What We Build
+
+- A Compile-Time Framework: Dependency injection, API mapping, and serialization are resolved at compile time, leading to near-instant startup.
+- A High-Performance Core: A minimal footprint runtime handles HTTP, messaging, and state management with ultra-low overhead.
+- An Event-Sourced State Layer: Your service's state is managed via a distributed Write-Ahead Log (WAL), ensuring durability, replication, and auditability without the overhead of a traditional database for core operations.
+- A Developer-Friendly API: Write simple Java code (data classes, interface implementations). The framework handles the complex distributed systems engineering behind the scenes.
+
+
+## Our choices
+
+This project will:
+
+1) Reduce the memory and processing footprint by
+
+  - Using reflection at compile time
+  - Using as much as possible standard java functionality (for example the default HttpServer instead of tomcat)
+
+2) Be in line with the latest trends:
+
+  - The application will be build and documented with DDD
+  - All modules will be written hexagonal to seperate business logic from in and output data
+
+3) Stability will be guarenteed by:
+
+  - Using advanced testing patterns.
+    - Unit testing that will contain the 5 a's.
+
+  - Component performance tests / Microbenchmarks must be intherit to the solution
+
+4) Only focus on modern microservices:
+
+  - Supported formats are Json and SBE
+  - API-first
+  - No server side rendering support. We only generate and communicate over API's. For frontend we suggest using React or Angular.
+
+5) Tracability and observability
+
+  - a traceId must be a first class citizens in our stack, this should be logged in an internal event bus, so with as little
+    as possible impact on the stack.
+  - The ability to trace calls must be inherint to the solution: to not have to many overhead
+  - By not depending on too many frameworks, the stacktraces should be reduced to a minimum.
+
+6) Documentation and build-upon
+
+  - Completely on DDD. Maintaining good documentation must be part of the process.
+
+7) Scalability
+
+  - Horizontal scalability is at the core of the solution
+
+8) Dataownership & Eventing
+
+  - The idea is that the microservice data is only reachable by api's
+  - We have an internal database using SBE and maps that will be stored in partitions over our horizontal scalable system.
+
+     - We have a file containing all the data
+     - We have a wal file containing all the changes. This will be a kind of queue broker and replicated over the system.
+     - There will be a process that brings the internal file back up to date every x time
+     - It will also be possible for other processes to listen to this to for example get database tables up to date.
+
+9) Security
+
+  - We want an extreme high level of security.
+  - Security by Default: OAuth2 is not an add-on; it's the foundation. We make it harder to create an insecure service than a secure one, ensuring that best practices are the path of least resistance

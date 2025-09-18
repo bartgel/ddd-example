@@ -1,0 +1,59 @@
+---
+id: WebServing
+name: WebServing
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+    - id: LightWebServer
+      version: 0.0.1
+    - id: WebservingProcessorPort
+      version: 0.0.1
+entities:
+  - id: WebServerConfiguration
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: WebServiceRunnerService
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+Parts of this Module will be build on compile time
+:::
+
+The web serving domain will provide you with the basic components to serve a REST endpoint
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/Paradigma" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the Webserving sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the entities in the template Subdomain.
+
+<EntityMap id="WebServing" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />

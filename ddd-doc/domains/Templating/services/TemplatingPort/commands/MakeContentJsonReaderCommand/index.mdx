@@ -1,0 +1,47 @@
+---
+id: MakeContentJsonWriterCommand
+name: MakeContentJsonWriterCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the Json Writer
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the Json Writer.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+public class JsonWriter extends AbstractWriterParser {  
+    public String toJsonListUser(List<com.bart.example.model.User> obj) {  
+        return obj == null  
+           ?  "null"  
+           : "[" + obj.stream().map(this::toJson).collect(Collectors.joining(",")) + "]";  
+    }  
+  
+    public String toJson(com.bart.example.model.User obj) {  
+       if (obj == null) return "null";  
+       StringBuilder json = new StringBuilder();  
+       json.append("{");  
+       appendToJson(json, "name", obj.getName() == null, sb -> parseField(obj.getName(),sb));  
+       json.append(",");  
+       appendToJson(json, "age", obj.getAge() == null, sb -> parseField(obj.getAge(),sb));  
+  
+       json.append("}");  
+  
+       return json.toString();  
+    }  
+  
+}
+```

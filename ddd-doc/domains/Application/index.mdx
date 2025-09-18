@@ -1,0 +1,46 @@
+---
+id: Application
+name: Application
+version: 1.0.0
+owners:
+  - bgeluykens
+  - Paradigma
+domains:
+  - id: Controller
+badges:
+  - content: Controller Domain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+  - content: Business Critical
+    backgroundColor: yellow
+    textColor: yellow
+    icon: ShieldCheckIcon
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+This will be our core controller domain
+
+<Tiles>
+    <Tile 
+        icon="UserGroupIcon" 
+        href="/docs/teams/paradigma" 
+        title="Engineering Support" 
+        description="Questions? Contact our full-stack team for technical support" 
+    />
+    <Tile 
+        icon="RectangleGroupIcon" 
+        href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} 
+        title="Domain Architecture" 
+        description="Explore our domain structure and service interactions" 
+    />
+</Tiles>
+
+## Domain Overview
+
+Here we will Document futher our domain, but not yet worked out
+
+## Sub domains#
+
+<Footer />

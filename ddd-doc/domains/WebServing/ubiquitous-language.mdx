@@ -1,0 +1,137 @@
+---
+dictionary:
+  - id: Route
+    name: Route
+    summary: "A mapping between an HTTP endpoint and the code that handles requests to it."
+    description: |
+      # Route
+
+      A **Route** defines the path (or pattern) in a URL that the server should respond to, combined with a specific HTTP method (GET, POST, etc.). It is the fundamental rule that determines which **Request Handler** is responsible for an incoming request.
+
+      A route is typically defined by a tuple: `(HTTP_METHOD, PATH_PATTERN)`.
+      For example, the route `(GET, "/api/users")` is different from `(POST, "/api/users")`.
+
+      ## Example
+      In many web frameworks, routes are defined in a central dispatcher:
+      ```java
+      server.createContext("/api/users", new UserHandler()); // Route for /api/users
+      ```
+    icon: Map
+
+  - id: Endpoint
+    name: Endpoint
+    summary: "A unique URL that represents a specific resource or function provided by the API."
+    description: |
+      # Endpoint
+
+      An **Endpoint** is the "destination" or target URL a client (e.g., a web browser, mobile app) communicates with. It is often used synonymously with a **Route**, but can be more specific.
+
+      While a *route* is the rule on the server, an *endpoint* is the address a client uses. A single endpoint (e.g., `https://api.example.com/users`) might be associated with multiple routes for different operations (GET, POST).
+
+      ## Example Endpoints
+      - `GET https://api.example.com/users` - Fetch a list of users
+      - `POST https://api.example.com/users` - Create a new user
+      - `GET https://api.example.com/users/123` - Fetch user with ID 123
+    icon: Navigation
+
+  - id: RequestHandler
+    name: Request Handler
+    summary: "The code responsible for processing an incoming HTTP request and generating an HTTP response."
+    description: |
+      # Request Handler
+
+      A **Request Handler** (or simply **Handler**) is a function, method, or object that contains the business logic to execute when a specific **Route** is matched. Its job is to process the incoming request (read parameters, headers, body) and build an appropriate **Response**.
+
+      In the provided Java code, any class that extends `AbstractContextHandler` is a Request Handler. The `handleGet`, `handlePost` etc., methods within it are the specific handler functions for each HTTP method.
+
+      ## Responsibilities
+      1. Parse input from the `HttpExchange` object.
+      2. Execute application logic (e.g., query a database, call another service).
+      3. Construct and send a **Response** (status code, headers, body).
+    icon: Server
+
+  - id: Middleware
+    name: Middleware
+    summary: "Software that intercepts and processes HTTP requests and responses in a chain."
+    description: |
+      # Middleware
+
+      **Middleware** is software that sits between the web server and the core application logic. It forms a pipeline through which **Requests** and **Responses** flow. Each middleware component can inspect, modify, or short-circuit the request/response cycle.
+
+      Middleware is typically used for cross-cutting concerns that are separate from business logic.
+
+      ## Common Uses
+      - **Authentication:** Checking if a user is logged in.
+      - **Logging:** Recording details about incoming requests.
+      - **CORS:** Adding Cross-Origin Resource Sharing headers to responses.
+      - **Parsing:** Automatically parsing JSON request bodies into objects.
+
+      ## How it Works
+      A request passes through each middleware in sequence before reaching the final **Request Handler**. The response then passes back through the middleware chain in reverse order.
+      `Request -> Middleware 1 -> Middleware 2 -> Handler -> Middleware 2 -> Middleware 1 -> Response`
+    icon: Filter
+
+  - id: Response
+    name: Response
+    summary: "The output an HTTP server sends back to a client, containing a status, headers, and a body."
+    description: |
+      # Response
+
+      The **Response** is the HTTP message a server returns to a client after processing its **Request**. It is the final output of a **Request Handler** and any **Middleware**.
+
+      ## Key Components
+      - **Status Code:** A 3-digit number indicating the result (e.g., `200 OK`, `404 Not Found`, `500 Internal Server Error`).
+      - **Headers:** Key-value pairs containing metadata about the response (e.g., `Content-Type: application/json`).
+      - **Body:** The main content or payload of the response (e.g., HTML, JSON, plain text).
+
+      In the provided code, the `sendResponse(exchange, 200, string)` method is responsible for building and sending the response.
+    icon: Reply
+
+  - id: Request
+    name: Request
+    summary: "An incoming message from a client asking the server to perform an operation."
+    description: |
+      # Request
+
+      An HTTP **Request** is a message sent by a client (like a web browser or another service) to trigger an action on the server. It is the input to the **Request Handler**.
+
+      ## Key Components
+      - **HTTP Method:** The action to perform (e.g., `GET`, `POST`, `PUT`, `DELETE`).
+      - **URL/Path:** The target **Endpoint** and resource.
+      - **Headers:** Key-value pairs containing metadata about the request (e.g., `Authorization: Bearer ...`, `Content-Type: ...`).
+      - **Body:** The data sent to the server (common with POST/PUT requests).
+
+      In Java's `com.sun.net.httpserver` package, the `HttpExchange` object encapsulates both the request and response.
+    icon: Download
+
+  - id: HttpMethod
+    name: HTTP Method
+    summary: "The verb (e.g., GET, POST) that defines the action for a request."
+    description: |
+      # HTTP Method
+
+      Also known as HTTP verbs, **HTTP Methods** indicate the desired action to be performed on the identified resource. They are a core part of defining a **Route**.
+
+      ## Common Methods
+      - **GET:** Retrieve a resource. Should not change server state.
+      - **POST:** Create a new resource or submit data for processing.
+      - **PUT:** Update or replace a resource.
+      - **DELETE:** Remove a resource.
+      - **PATCH:** Partially update a resource.
+
+      The provided code's `HttpMethodData` object contains the method name to generate the correct handler method (e.g., `handleGet`).
+    icon: Activity
+
+  - id: Dispatcher
+    name: Dispatcher / Router
+    summary: "The component that matches an incoming request's method and path to the correct Route and Request Handler."
+    description: |
+      # Dispatcher / Router
+
+      The **Dispatcher** (or **Router**) is the core component of a web server that examines each incoming **Request** (its HTTP method and URL path) and determines which defined **Route** it matches. Once a match is found, the request is forwarded to the corresponding **Request Handler**.
+
+      It is the traffic director of the web application.
+
+      In the provided code, the `RouteDispatcher` class likely performs this role, routing requests to the appropriate instance of `AbstractContextHandler`.
+    icon: GitBranch
+---

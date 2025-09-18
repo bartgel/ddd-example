@@ -1,0 +1,28 @@
+---
+id: DependencyInjectorData
+name: DependencyInjectorData
+version: 1.0.0
+identifier: className
+summary: Represents the dependencies we are going to inject at runtime
+properties:
+  - name: className
+    type: string
+    required: true
+    description: The complete name of the class with package
+  - name: simpleName
+    type: integer
+    required: true
+    description: Simple name of the class without the package
+  - name: dependencies
+    type: string[]
+    required: true
+    description: List of constructor parameters for this class.
+---
+
+## Overview
+
+This class is used to configure the webservice
+
+### Entity Properties
+<EntityPropertiesTable />
+
