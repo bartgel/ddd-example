@@ -1,0 +1,178 @@
+---
+dictionary:
+  - id: Template
+    name: Template
+    summary: A blueprint containing static text and placeholders.
+    description: |
+      # Template
+
+      A string or a data structure that defines the structure and static parts of the desired output. It contains one or more **Placeholders** that mark the locations where dynamic content will be inserted during **[Rendering](./Rendering)**.
+
+      In this system, templates are defined as Java multi-line strings within the `ContextClassTemplate` class.
+
+      ## Example
+      ```java
+      private static final String CONTEXT_CLASS_TEMPLATE = """
+          package com.bart.example;
+
+          public class {1} extends AbstractContextHandler {
+          {2}
+          }
+          """;
+      ```
+    icon: Wand2
+
+  - id: Placeholder
+    name: Placeholder
+    summary: "A marker in a template indicating where to insert dynamic data."
+    description: |
+      # Placeholder
+
+      A symbolic marker (e.g., `{0}`, `{1}`) embedded within a **[Template](./Template)**. During **[Rendering](./Rendering)**, it is replaced by a specific value through **[Variable Substitution](./VariableSubstitution)**.
+
+      This implementation uses the `MessageFormat.format` pattern for placeholders, which are positional arguments.
+
+      ## How it works
+
+      [Article from codementor.io](https://www.codementor.io/@gogainda/better-string-formatting-in-java-with-messageformat-2f9e8zvuh7)
+
+      When it comes to string formatting in Java, developers typically opt for either straightforward string concatenation or the String.format method. I usually recommend using String.format, because it's less error prone than string concatenation, but today I want to explore another option that is often overlooked by developers.
+
+      The main difference between MessageFormat.format and String.format lies in how arguments are passed to the string: String.format utilizes specific placement markers (e.g., %s, %d), whereas MessageFormat.format uses indexed placeholders, with each index corresponding to a value from the argument array.
+
+      ```java
+      String message = "Hello, {0}! Welcome to {1}.";
+      String formattedMessage = MessageFormat.format(message, "John", "our website");
+      System.out.println(formattedMessage);
+      ```
+
+      Output:
+
+      ```bash
+      Hello, John! Welcome to our website.
+      ```
+
+      But there are more differences to consider. Let's delve deeper into what MessageFormat.format offers:
+
+      ### Handling Pluralization:
+
+      ```java
+      String pattern = "There {0,choice,0#are no files|1#is one file|1\<are {0,number,integer} files} on your desktop.";
+      for (int count : new int[]{0, 1, 5}) {
+       System.out.println(MessageFormat.format(pattern, count));
+      }
+      ```
+
+      Output:
+
+      ```bash
+      There are no files on your desktop.
+      There is one file on your desktop.
+      There are 5 files on your desktop.
+      ```
+
+      Here, MessageFormat utilizes the choice format to select the appropriate message based on the number.
+
+      ### Localization and Internationalization:
+
+      ```java
+      double payment = 1234.56;
+      Object[] args = {payment}; MessageFormat usFormatted = new MessageFormat("The payment due is {0,number,currency}.", Locale.US);
+      MessageFormat itFormatted = new MessageFormat("The payment due is {0,number,currency}.", Locale.ITALY); System.out.println(usFormatted.format(args));
+      System.out.println(itFormatted.format(args));
+      ```
+
+      Output:
+
+      ```bash
+      The payment due is $1,234.56.
+      The payment due is € 1.234,56.
+      ```
+
+      MessageFormat.format supports localization by allowing the specification of a Locale object. In this example, the payment amount is formatted differently based on the locale.
+
+      ```java
+      String message = "The meeting is scheduled for {0, date, long} at {0, time, short}.";
+      Date meetingDate = new Date();
+      String formattedMessage = MessageFormat.format(message, meetingDate);
+      System.out.println(formattedMessage);
+      ```
+
+      Output:
+
+      ```bash
+      The meeting is scheduled for May 18, 2023 at 10:30 AM.
+      ```
+
+      MessageFormat.format can also handle date and time formatting based on specified format styles. In this example, the meeting date is formatted using the long date style and short time style. This method also allows for more sophisticated date formatting, such as:
+
+      ```java
+      Date now = new Date();
+      String formattedFilename = MessageFormat.format("file{0,date,yyyy-MM-dd-HH-mm-ss}.json", now);
+      System.out.println(formattedFilename);
+      ```
+
+      This exploration of MessageFormat.format demonstrates its flexibility and power, particularly in applications requiring localization, conditional formatting, and the management of complex string patterns.
+    icon: FileText
+  - id: Rendering
+    name: Rendering
+    summary: "The complete process of producing final output from a template and data."
+    description: |
+      # Rendering
+
+      The overall process executed by the **[Template Engine](./TemplateEngine)**. It involves taking a **[Template](./Template)** and **[Template Data](#template-data)**, performing **[Variable Substitution](./VariableSubstitution)** on all **[Placeholders](./Placeholder)**, and producing the final output code.
+
+      The `apply` method in `ContextClassTemplate` is the entry point for rendering a complete class. It orchestrates the rendering of smaller method templates and combines them into the final result.
+    icon: ListOrdered
+
+  - id: VariableSubstitution
+    name: Variable Substitution
+    summary: "The process of replacing a placeholder with a concrete value."
+    description: |
+      # Variable Substitution
+
+      The mechanical act of replacing a **[Placeholder](./Placeholder)** in a **[Template](./Template)** with its corresponding actual value from the **[Template Data](#template-data)**. This is the core operation that brings dynamic content into the static template.
+
+      This is performed by the `format()` method, such as `MessageFormat.format()` or similar utilities.
+
+      ## Example
+      ```java
+      String output = format("Hello, {0}!", "World");
+      // Variable Substitution replaces {0} -> "World"
+      // output is now "Hello, World!"
+      ```
+    icon: Replace
+
+  - id: TemplateEngine
+    name: Template Engine
+    summary: "The component that executes the rendering process."
+    description: |
+      # Template Engine
+
+      The component or algorithm that performs **[Rendering](./Rendering)**. It is the orchestrator that takes a **[Template](./Template)** and **[Template Data](#template-data)** and produces the final output by executing **[Variable Substitution](./VariableSubstitution)**.
+
+      In this codebase, the `ContextClassTemplate` class itself acts as the template engine. Its `apply` and `generateMethod` methods constitute the engine's logic.
+    icon: Cog
+
+  - id: CodeGeneration
+    name: Code Generation
+    summary: "The act of automatically producing source code from a higher-level definition or model, using Templates."
+    description: |
+      # Code Generation
+
+      The high-level domain activity this component performs. It is the automatic creation of source code (Java classes in this case) from a model (like a list of `HttpMethodData`) using a **[Template Engine](./TemplateEngine)** and **[Templates](./Template)**.
+
+      The entire purpose of the `ContextClassTemplate` class is to automate Java code generation for HTTP handlers.
+    icon: Code2
+
+  - id: TemplateData
+    name: Template Data / Model
+    summary: "The structured input data used for variable substitution during rendering."
+    description: |
+      # Template Data / Model
+
+      The structured input that provides the concrete values needed for **[Variable Substitution](./VariableSubstitution)**. It is the "model" that is applied to the **[Template](./Template)**.
+
+      For the `ContextClassTemplate.apply()` method, the template data consists of the `packageName`, `className`, and the `List<HttpMethodData> methods`. Each `HttpMethodData` object contains the data needed to render a single method.
+    icon: Database
+---

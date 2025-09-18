@@ -1,0 +1,2112 @@
+---
+id: ProcessAllInjectorAnnotatedClasses
+name: ProcessAllInjectorAnnotatedClasses
+version: 0.0.1
+summary: |
+  Process all classes that are annotated with the needed annotations
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This is a message to start generating dependencies
+
+Annotated classes are:
+
+- @Bean
+- @Inject
+- @Singleton
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: GenerateDispatchClasses
+name: GenerateDispatchClasses
+version: 0.0.1
+summary: |
+  This class will on compile time generate classes to handle the dispatching of webrequests
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes to handle the dispatching of webrequests
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: ProcessAllJsonAnnotatedClasses
+name: ProcessAllJsonAnnotatedClasses
+version: 0.0.1
+summary: Process all classes that are annotated with JsonObject
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This is a message to start generating a json reader and a json writer
+
+Annotated classes are:
+
+- @JsonObject
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: GenerateEndpointClasses
+name: GenerateEndpointClasses
+version: 0.0.1
+summary: |
+  This class will on compile time generate classes to handle the diffent endpoints. For each endpont a class wil be generated, it will dispatch the GET, POST, PUT, DELETE and PATCH actions.
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes to handle the diffent endpoints. For each endpont a class wil be generated, it will dispatch the GET, POST, PUT, DELETE and PATCH actions.
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: GenerateInjectorClasses
+name: GenerateInjectorClasses
+version: 0.0.1
+summary: |
+   This class will on compile time generate classes to handle dependency injection
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes to handle dependency injection
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: GenerateJsonReader
+name: GenerateJsonReader
+version: 0.0.1
+summary: |
+  This class will Generate the json Reader
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes the JsonReader
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: GenerateJsonWriter
+name: GenerateJsonWriter
+version: 0.0.1
+summary: |
+  This class will Generate the json Writer
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes the JsonWriter
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: MakeContentEndpointHandlerClassCommand
+name: MakeContentEndpointHandlerClassCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class wil generate the content for the diffent endpoint handlers
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+We could succesfully generate runtime classes.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+an example of a generated class
+
+```java
+public class UsersContextHandler extends AbstractContextHandler {  
+   private final static UsersContextHandler INSTANCE = new UsersContextHandler();  
+  
+   public static UsersContextHandler getInstance () {  
+     return INSTANCE;  
+   }  
+  
+   private UsersContextHandler() {  
+     super();  
+   }  
+  @Override  
+  protected void handleGET(HttpExchange exchange) throws IOException {  
+    String string = CompileTimeDIContainer.getUserController().getUsers(exchange);  
+    sendResponse(exchange, 200, string);  
+  }  
+  
+  
+  @Override  
+  protected void handlePOST(HttpExchange exchange) throws IOException {  
+    String string = CompileTimeDIContainer.getUserController().createUser(exchange);  
+    sendResponse(exchange, 200, string);  
+  }  
+  
+}
+```
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: MakeContentInjectorClassCommand
+name: MakeContentInjectorClassCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class wil generate the content for the injector
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+ On compiletime: this class wil generate the content for the injector
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Generation
+
+```java
+package com.bart.example;  
+  
+import java.util.*;  
+  
+public class CompileTimeDIContainer {  
+  
+    private static final com.bart.example.controller.UserController userController = new com.bart.example.controller.UserController();  
+    private static final com.bart.example.controller.BaseController baseController = new com.bart.example.controller.BaseController();  
+  
+    public static com.bart.example.controller.UserController getUserController () {  
+       return userController;  
+    }  
+  
+    public static com.bart.example.controller.BaseController getBaseController () {  
+       return baseController;  
+    }  
+  
+  
+}
+```
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "DeliveryFailed",
+    "description": "Schema for delivery failed event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: MakeContentJsonWriterCommand
+name: MakeContentJsonWriterCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the Json Writer
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the Json Writer.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+public class JsonWriter extends AbstractWriterParser {  
+    public String toJsonListUser(List<com.bart.example.model.User> obj) {  
+        return obj == null  
+           ?  "null"  
+           : "[" + obj.stream().map(this::toJson).collect(Collectors.joining(",")) + "]";  
+    }  
+  
+    public String toJson(com.bart.example.model.User obj) {  
+       if (obj == null) return "null";  
+       StringBuilder json = new StringBuilder();  
+       json.append("{");  
+       appendToJson(json, "name", obj.getName() == null, sb -> parseField(obj.getName(),sb));  
+       json.append(",");  
+       appendToJson(json, "age", obj.getAge() == null, sb -> parseField(obj.getAge(),sb));  
+  
+       json.append("}");  
+  
+       return json.toString();  
+    }  
+  
+}
+```
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: MakeContentJsonReaderCommand
+name: MakeContentJsonReaderCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the Json Reader
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the Json Reader.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+public class JsonReader extends AbstractReaderParser {  
+    public com.bart.example.model.User toUser(String jsonString) {  
+        if (isNull(jsonString)) return null;  
+        com.bart.example.model.User obj = new com.bart.example.model.User();  
+        return fromJson( obj, jsonString, (key,value) -> setFieldValue(obj, key, value));  
+    }  
+  
+   private void setFieldValue(com.bart.example.model.User obj, String key, String value) {  
+       if (isNull(value)) return;  
+       switch (key) {  
+           case "name" :  
+             obj.setName(toSTRING(value));  
+             return;  
+  
+           case "age" :  
+             obj.setAge(toINTEGER(value));  
+             return;  
+  
+          default:  
+            return;  
+       }  
+   }  
+ 
+}
+```
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: MakeContentRouteDispatcherCommand
+name: MakeContentRouteDispatcherCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the route dispatcher.
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the route dispatcher.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+import com.bart.example.infrastructure.webserving.handlers.RouteDispatcher;  
+import com.bart.example.infrastructure.webserving.handlers.AbstractContextHandler;  
+import static com.bart.example.infrastructure.webserving.services.PathComparatorUtil.*;  
+import java.util.Optional;  
+  
+public class InternalRouteDispatcher extends RouteDispatcher {  
+   @Override  
+   public Optional<AbstractContextHandler> getHandler(String urlPath) {  
+       String path = removeTrailingSlash(urlPath);  
+       int pathHash = path.hashCode();  
+          switch (pathHash) {  
+       case 1457148729: return Optional.of(UsersContextHandler.getInstance());  
+  
+             default:  
+                       if (pathsMatch("/users/{id}",path)) return Optional.of(UsersParamIdContextHandler.getInstance());  
+  
+                return Optional.empty();  
+       }  
+   }  
+}
+```
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: WriteClassCommand
+name: WriteClassCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class is used to write to the classpath
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime: this class is used to write to the classpath
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: RunWebService
+name: Run webservice
+version: 0.0.1
+summary: |
+  Run webservice
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This is a messge to start the webservice
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: WebServiceCouldNotBeStarted
+name: Error - Starting Webservice
+version: 0.0.1
+summary: |
+  The webservice could not be started
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+We could not start the webservice
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "DeliveryFailed",
+    "description": "Schema for delivery failed event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: WebServiceStarted
+name: WebServiceStarted
+version: 0.0.1
+summary: |
+  The webservice is started with succes
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+We could start the webservice
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
+---
+id: ProcessAllWebAnnotatedClasses
+name: ProcessAllWebAnnotatedClasses
+version: 0.0.1
+summary: |
+  Process all classes that are annotated with the needed annotations
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This is a message to start generating dependencies
+
+Annotated classes are:
+
+- @Bean
+- @Inject
+- @Singleton
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}
+---
+id: InjectorProcessorPort
+version: 0.0.1
+name: InjectorProcessorPort
+summary: |
+  Service that evalutates dependencies
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: ProcessAllInjectorAnnotatedClasses
+sends:
+  - id: GenerateInjectorClasses
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+At Compile time, this will generated classes to handle dependency injection
+
+### Core features
+
+This is the Injector processer
+
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />
+---
+id: JsonProcessorPort
+version: 0.0.1
+name: JsonProcessorPort
+summary: |
+  Service that evalutates the json processor
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: ProcessAllJsonAnnotatedClasses
+sends:
+  - id: GenerateJsonReader
+  - id: GenerateJsonWriter
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+This is the json processor
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />
+---
+id: TemplatingPort
+version: 0.0.1
+name: TemplatingPort
+summary: |
+  All templating passes through this port
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: GenerateInjectorClasses
+  - id: GenerateEndpointClasses
+  - id: GenerateDispatchClasses
+  - id: GenerateJsonReader
+  - id: GenerateJsonWriter
+sends:
+  - id: MakeContentEndpointHandlerClassCommand
+  - id: MakeContentInjectorClassCommand
+  - id: MakeContentRouteDispatcherCommand
+  - id: MakeContentJsonReaderCommand
+  - id: MakeContentJsonWriterCommand
+  - id: WriteClassCommand
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+The templating port will use templates in pure java code to generate java classes. This is all done at compile time.
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+Based on the messages we receive, classes will be generated.
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={10} />
+
+<Footer />
+---
+id: LightWebServer
+version: 0.0.1
+name: LightWebServer
+summary: |
+  Service that starts the webservice
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: RunWebService
+sends:
+  - id: WebServiceStarted
+  - id: WebServiceCouldNotBeStarted
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+The entry point for our Light weight webservice
+
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />
+---
+id: WebservingProcessorPort
+version: 0.0.1
+name: WebservingProcessorPort
+summary: |
+  Service that processes the web annotated classes
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: ProcessAllWebAnnotatedClasses
+sends:
+  - id: GenerateDispatchClasses
+  - id: GenerateEndpointClasses
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+At compile time all endpoints will be generated and prepared to serve
+
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />
+---
+id: Application
+name: Application
+version: 1.0.0
+owners:
+  - bgeluykens
+  - Paradigma
+domains:
+  - id: Controller
+badges:
+  - content: Controller Domain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+  - content: Business Critical
+    backgroundColor: yellow
+    textColor: yellow
+    icon: ShieldCheckIcon
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+This will be our core controller domain
+
+<Tiles>
+    <Tile 
+        icon="UserGroupIcon" 
+        href="/docs/teams/paradigma" 
+        title="Engineering Support" 
+        description="Questions? Contact our full-stack team for technical support" 
+    />
+    <Tile 
+        icon="RectangleGroupIcon" 
+        href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} 
+        title="Domain Architecture" 
+        description="Explore our domain structure and service interactions" 
+    />
+</Tiles>
+
+## Domain Overview
+
+Here we will Document futher our domain, but not yet worked out
+
+## Sub domains#
+
+<Footer />
+
+---
+id: Controller
+name: Example Controller Port
+version: 1.0.0
+owners:
+  - bgeluykens
+  - Paradigma
+domains:
+  - id: Templating
+badges:
+  - content: Controller Domain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+  - content: Business Critical
+    backgroundColor: yellow
+    textColor: yellow
+    icon: ShieldCheckIcon
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+This is for future use
+
+<Footer />
+
+---
+id: Infrastructure
+name: Infrastructure
+version: 1.0.0
+owners:
+  - bgeluykens
+  - Paradigma
+domains:
+  - id: Templating
+  - id: WebServing
+  - id: Injector
+  - id: Json
+badges:
+  - content: Infrastructure Domain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+  - content: Business Critical
+    backgroundColor: yellow
+    textColor: yellow
+    icon: ShieldCheckIcon
+
+resourceGroups:
+  - id: related-resources
+    title: Core CI CD Services
+    items:
+      - id: LightWebServer
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+The Infrastructure Domain provides foundational components and core services that enable the framework's operation. This domain delivers compile-time generated, Spring Boot-like application capabilities that form the backbone of our development ecosystem.
+
+<Tiles>
+    <Tile 
+        icon="UserGroupIcon" 
+        href="/docs/teams/paradigma" 
+        title="Engineering Support" 
+        description="Questions? Contact our full-stack team for technical support" 
+    />
+    <Tile 
+        icon="RectangleGroupIcon" 
+        href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} 
+        title="Domain Architecture" 
+        description="Explore our domain structure and service interactions" 
+    />
+</Tiles>
+
+## Domain Overview
+
+The Infrastructure Domain delivers essential core functionalities designed to optimize both user experience and developer productivity. These components provide the fundamental building blocks that support application development and runtime execution.
+
+## Subdomains
+
+The Infrastructure Domain comprises the following specialized subdomains:
+
+- <ResourceLink id="Templating" type="domain">Templating</ResourceLink>: Compile-time Java class generation for optimized runtime performance
+- <ResourceLink id="Json" type="domain">Json</ResourceLink>: Efficient JSON reader/writer module generation and serialization utilities
+- <ResourceLink id="Injector" type="domain">Injector</ResourceLink>: Dependency injection framework and related metadata management
+- <ResourceLink id="WebServing" type="domain">WebServing</ResourceLink>: Comprehensive web serving logic and HTTP request handling capabilities
+
+<Footer />
+---
+id: Injector
+name: Injector
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+  - id: InjectorProcessorPort
+    version: 0.0.1
+entities:
+  - id: DependencyInjectorData
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: InjectorProcessorPort
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+Parts of this Module will be build on compile time
+:::
+
+This module will create dependencyinjection
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/full-stack" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the Dependency Injection sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the dependency injection Subdomain.
+
+<EntityMap id="Injector" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />
+
+---
+id: Json
+name: Json
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+  - id: JsonProcessorPort
+    version: 0.0.1
+entities:
+  - id: DependencyInjectorData
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: JsonProcessorPort
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+Parts of this Module will be build on compile time
+:::
+
+This module will create a simple json reader and json writer
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/Paradigma" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the Dependency Json sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the dependency Json Subdomain.
+
+<EntityMap id="Injector" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />
+
+---
+id: Templating
+name: Templating
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+    - id: TemplatingPort
+      version: 0.0.1
+entities:
+  - id: TemplateSettings
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: TemplatingService
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+This module is used to generate compile time build classes. It cannot be used on runtime.
+:::
+
+The template sub-domain will generate classes.
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/full-stack" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the template sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the entities in the template Subdomain.
+
+<EntityMap id="Templating" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />
+
+---
+id: WebServing
+name: WebServing
+version: 0.0.1
+owners:
+  - bgeluykens
+  - Paradigma
+services:
+    - id: LightWebServer
+      version: 0.0.1
+    - id: WebservingProcessorPort
+      version: 0.0.1
+entities:
+  - id: WebServerConfiguration
+badges:
+  - content: Subdomain
+    backgroundColor: blue
+    textColor: blue
+    icon: RectangleGroupIcon
+
+resourceGroups:
+  - id: related-resources
+    title: Core resources
+    items:
+      - id: WebServiceRunnerService
+        type: service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+
+
+:::warning
+
+Parts of this Module will be build on compile time
+:::
+
+The web serving domain will provide you with the basic components to serve a REST endpoint
+
+<Tiles >
+    <Tile icon="UserGroupIcon" href="/docs/teams/Paradigma" title="Contact the team" description="Any questions? Feel free to contact the owners" />
+    <Tile icon="RectangleGroupIcon" href={`/visualiser/domains/${frontmatter.id}/${frontmatter.version}`} title={`${frontmatter.services.length} services`} description="This domain contains the following services." />
+</Tiles>
+
+### Architecture for the Webserving sub-domain
+
+<NodeGraph />
+
+### Entity Map
+
+A visualization of the entities in the template Subdomain.
+
+<EntityMap id="WebServing" />
+
+
+<MessageTable format="all" limit={4} showChannels={true} title="Messages in/out of the domain" />
+
+
+<Footer />
+
+---
+id: Paradigma
+name: Paradigma Digital
+summary: Paradigma Digital — specialists in modernisation and digital transformation
+members:
+    - bgeluykens
+email: info@paradigmadigital.com
+---
+
+## Overview
+
+At Paradigma Digital, we believe technology should never be limited by “the way things have always been done.”  
+We partner with organisations ready to challenge the status quo, modernise their systems, and embrace new ways of working.  
+
+Our mission is simple: **to launch your company toward digital success** through strategy, technology, and the expertise of our people.  
+
+Digital transformation is more than a buzzword—it’s still booming. With advances in **Cloud**, **Data Intelligence**, and modern software practices, transformation can finally reach the very core of your business.  
+
+We reject shortcuts and one-size-fits-all approaches. Instead, we focus on **people, experience, and excellence**—helping you overcome legacy constraints, unlock new opportunities, and deliver real business impact.  
+
+If you’re ready to move beyond outdated systems and inherited plans, join us in shaping a smarter, more resilient digital future.  
+
+---
+id: bgeluykens
+name: Bart Geluykens
+avatarUrl: "https://media.licdn.com/dms/image/v2/C4D03AQG3nBHbg1QwGg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1634887962698?e=1761177600&v=beta&t=70MwCPrC2MRgFJazLVCYro5HZbMqZai0svIkGmIAX1w"
+role: Senior Solutions Architect
+---
+
+## About Me
+
+With 25 years in IT, I bring a strong foundation in software development and over six years of experience as a Solution Architect. I’m passionate about bridging technology and business needs—designing solutions that deliver measurable value and lasting impact.
+
+## Connect with Me
+
+- [LinkedIn](https://www.linkedin.com/in/bgeluykens/)
+
+## What I Do
+
+My focus is on **modernisation projects**, helping organisations transform and evolve with agility and resilience.  
+
+- **Business First**: Every change starts with conscious alignment to business goals.  
+- **Architecture Design**: Crafting scalable, resilient systems using domain-driven and event-driven paradigms. Scaling hexagonal architectures with clarity and intent.  
+- **Agile Mindset**: Applying Agile practices to drive successful, sustainable transformations.  
+- **Code Reviews & Mentorship**: Ensuring code quality and nurturing growth through knowledge sharing.  
+- **Continuous Improvement**: Advocating for best practices across development, deployment, and monitoring.  
+
+I believe in the power of **event-driven systems** to create responsive, maintainable, and extensible software. In today’s fast-moving tech landscape, I stay curious and committed—constantly learning, experimenting, and adapting.  
+
+Let’s connect and talk about technology, event-driven architecture, or simply share ideas on building better software systems!  
+
+---
+*Bart Geluykens*  
+*Senior Solutions Architect, [Paradigma Digital](https://www.paradigmadigital.com/)*  
+---
+id: JsonClasses
+name: JsonClasses
+version: 1.0.0
+identifier: className
+summary: Represents the dependencies we are going to inject at runtime
+properties:
+  - name: className
+    type: string
+    required: true
+    description: The complete name of the class with package
+  - name: simpleName
+    type: integer
+    required: true
+    description: Simple name of the class without the package
+  - name: dependencies
+    type: string[]
+    required: true
+    description: List of constructor parameters for this class.
+---
+
+## Overview
+
+This class is used to configure the webservice
+
+### Entity Properties
+<EntityPropertiesTable />
+
+
+---
+id: DependencyInjectorData
+name: DependencyInjectorData
+version: 1.0.0
+identifier: className
+summary: Represents the dependencies we are going to inject at runtime
+properties:
+  - name: className
+    type: string
+    required: true
+    description: The complete name of the class with package
+  - name: simpleName
+    type: integer
+    required: true
+    description: Simple name of the class without the package
+  - name: dependencies
+    type: string[]
+    required: true
+    description: List of constructor parameters for this class.
+---
+
+## Overview
+
+This class is used to configure the webservice
+
+### Entity Properties
+<EntityPropertiesTable />
+
+
+---
+id: TemplateSettings
+name: TemplateSettings
+version: 1.0.0
+identifier: templateId
+summary: Represents the template we are going to use to generate classes at compiletime.
+properties:
+  - name: templateId
+    type: integer
+    required: true
+    description: Unique identifier for the template
+  - name: packagename
+    type: string
+    required: true
+    description: packagename
+---
+
+## Overview
+
+This is a module to generate runtime classes.
+
+Based upon some input classes we will generate
+
+### Entity Properties
+<EntityPropertiesTable />
+
+
+---
+id: WebServerConfiguration
+name: WebserverConfiguration
+version: 1.0.0
+identifier: templateId
+summary: Represents the template we are going to use to generate classes at compiletime.
+properties:
+  - name: port
+    type: integer
+    required: true
+    description: the port on what the configuration must run
+  - name: numberOfThreads
+    type: integer
+    required: true
+    description: There are so many numberOfThreads running this webserver
+---
+
+## Overview
+
+This class is used to configure the webservice
+
+### Entity Properties
+<EntityPropertiesTable />
+
+
+---
+id: inventory.{env}.events
+name: Inventory Events Channel
+version: 1.0.0
+summary: |
+  Central event stream for all inventory-related events including stock updates, allocations, and adjustments
+owners:
+  - dboyne
+address: inventory.{env}.events
+protocols: 
+  - kafka
+
+parameters:
+  env:
+    enum:
+      - dev
+      - sit
+      - prod
+    description: 'Environment to use'
+---
+
+### Overview
+The Inventory Events channel is the central stream for all inventory-related events across the system. This includes stock level changes, inventory allocations, adjustments, and stocktake events. Events for a specific SKU are guaranteed to be processed in sequence when using productId as the partition key.
+
+<ChannelInformation />
+
+### Publishing and Subscribing to Events
+
+#### Publishing Example
+```python
+from kafka import KafkaProducer
+import json
+from datetime import datetime
+
+# Kafka configuration
+bootstrap_servers = ['localhost:9092']
+topic = f'inventory.{env}.events'
+
+# Create a Kafka producer
+producer = KafkaProducer(
+    bootstrap_servers=bootstrap_servers,
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
+# Example inventory update event
+inventory_event = {
+    "eventType": "STOCK_LEVEL_CHANGED",
+    "timestamp": datetime.utcnow().isoformat(),
+    "version": "1.0",
+    "payload": {
+        "productId": "PROD-456",
+        "locationId": "WH-123",
+        "previousQuantity": 100,
+        "newQuantity": 95,
+        "changeReason": "ORDER_FULFILLED",
+        "unitOfMeasure": "EACH",
+        "batchInfo": {
+            "batchId": "BATCH-789",
+            "expiryDate": "2025-12-31"
+        }
+    },
+    "metadata": {
+        "source": "warehouse_system",
+        "correlationId": "inv-xyz-123",
+        "userId": "john.doe"
+    }
+}
+
+# Send the message - using productId as key for partitioning
+producer.send(
+    topic, 
+    key=inventory_event['payload']['productId'].encode('utf-8'),
+    value=inventory_event
+)
+producer.flush()
+
+print(f"Inventory event sent to topic {topic}")
+
+```
+
+### Subscription example
+
+```python
+from kafka import KafkaConsumer
+import json
+from datetime import datetime
+
+class InventoryEventConsumer:
+    def __init__(self):
+        # Kafka configuration
+        self.topic = f'inventory.{env}.events'
+        self.consumer = KafkaConsumer(
+            self.topic,
+            bootstrap_servers=['localhost:9092'],
+            group_id='inventory-processor-group',
+            auto_offset_reset='earliest',
+            enable_auto_commit=False,
+            value_deserializer=lambda x: json.loads(x.decode('utf-8')),
+            key_deserializer=lambda x: x.decode('utf-8') if x else None
+        )
+
+    def process_event(self, event):
+        """Process individual inventory events based on type"""
+        event_type = event.get('eventType')
+        
+        if event_type == 'STOCK_LEVEL_CHANGED':
+            self.handle_stock_level_change(event)
+        elif event_type == 'LOW_STOCK_ALERT':
+            self.handle_low_stock_alert(event)
+        # Add more event type handlers as needed
+
+    def handle_stock_level_change(self, event):
+        """Handle stock level change events"""
+        payload = event['payload']
+        print(f"Stock level change detected for product {payload['productId']}")
+        print(f"New quantity: {payload['newQuantity']}")
+        # Add your business logic here
+
+    def handle_low_stock_alert(self, event):
+        """Handle low stock alert events"""
+        payload = event['payload']
+        print(f"Low stock alert for product {payload['productId']}")
+        print(f"Current quantity: {payload['currentQuantity']}")
+        # Add your business logic here
+
+    def start_consuming(self):
+        """Start consuming messages from the topic"""
+        try:
+            print(f"Starting consumption from topic: {self.topic}")
+            for message in self.consumer:
+                try:
+                    # Process the message
+                    event = message.value
+                    print(f"Received event: {event['eventType']} for product: {event['payload']['productId']}")
+                    
+                    # Process the event
+                    self.process_event(event)
+                    
+                    # Commit the offset after successful processing
+                    self.consumer.commit()
+                    
+                except Exception as e:
+                    print(f"Error processing message: {str(e)}")
+                    # Implement your error handling logic here
+                    # You might want to send to a DLQ (Dead Letter Queue)
+        
+        except Exception as e:
+            print(f"Consumer error: {str(e)}")
+        finally:
+            # Clean up
+            self.consumer.close()
+
+if __name__ == "__main__":
+    # Create and start the consumer
+    consumer = InventoryEventConsumer()
+    consumer.start_consuming()
+  ```
+---
+id: orders.{env}.events
+name: Order Events Channel
+version: 1.0.1
+summary: |
+  Central event stream for all order-related events in the order processing lifecycle
+owners:
+  - dboyne
+address: orders.{env}.events
+protocols: 
+  - kafka
+
+parameters:
+  env:
+    enum:
+      - dev
+      - sit
+      - prod
+    description: 'Environment to use'
+---
+
+### Overview
+The Orders Events channel is the central stream for all order-related events across the order processing lifecycle. This includes order creation, updates, payment status, fulfillment status, and customer communications. All events related to a specific order are guaranteed to be processed in sequence when using orderId as the partition key.
+
+<ChannelInformation />
+
+### Publishing a message using Kafka
+
+Here is an example of how to publish an order event using Kafka:
+
+```python
+from kafka import KafkaProducer
+import json
+from datetime import datetime
+
+# Kafka configuration
+bootstrap_servers = ['localhost:9092']
+topic = f'orders.{env}.events'
+
+# Create a Kafka producer
+producer = KafkaProducer(
+    bootstrap_servers=bootstrap_servers,
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
+# Example order created event
+order_event = {
+    "eventType": "ORDER_CREATED",
+    "timestamp": datetime.utcnow().isoformat(),
+    "version": "1.0",
+    "payload": {
+        "orderId": "12345",
+        "customerId": "CUST-789",
+        "items": [
+            {
+                "productId": "PROD-456",
+                "quantity": 2,
+                "price": 29.99
+            }
+        ],
+        "totalAmount": 59.98,
+        "shippingAddress": {
+            "street": "123 Main St",
+            "city": "Springfield",
+            "country": "US"
+        }
+    },
+    "metadata": {
+        "source": "web_checkout",
+        "correlationId": "abc-xyz-123"
+    }
+}
+
+# Send the message - using orderId as key for partitioning
+producer.send(
+    topic, 
+    key=order_event['payload']['orderId'].encode('utf-8'),
+    value=order_event
+)
+producer.flush()
+
+print(f"Order event sent to topic {topic}")
+---
+id: payments.{env}.events
+name: Payment Events Channel
+version: 1.0.0
+summary: |
+ All events contain payment ID for traceability and ordered processing.
+owners:
+ - dboyne
+address: payments.{env}.events
+protocols: 
+ - kafka
+
+parameters:
+ env:
+   enum:
+     - dev
+     - sit
+     - prod
+   description: 'Environment to use for payment events'
+---
+
+### Overview
+The Payments Events channel is the central stream for all payment lifecycle events. This includes payment initiation, authorization, capture, completion and failure scenarios. Events for a specific payment are guaranteed to be processed in sequence when using paymentId as the partition key.
+
+<ChannelInformation />
+
+### Publishing Events Using Kafka
+
+Here's an example of publishing a payment event:
+
+```python
+from kafka import KafkaProducer
+import json
+from datetime import datetime
+
+# Kafka configuration
+bootstrap_servers = ['localhost:9092']
+topic = f'payments.{env}.events'
+
+# Create Kafka producer
+producer = KafkaProducer(
+   bootstrap_servers=bootstrap_servers,
+   value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
+# Example payment processed event
+payment_event = {
+   "eventType": "PAYMENT_PROCESSED",
+   "timestamp": datetime.utcnow().isoformat(),
+   "version": "1.0",
+   "payload": {
+       "paymentId": "PAY-123-456", 
+       "orderId": "ORD-789",
+       "amount": {
+           "value": 99.99,
+           "currency": "USD"
+       },
+       "status": "SUCCESS",
+       "paymentMethod": {
+           "type": "CREDIT_CARD",
+           "last4": "4242",
+           "expiryMonth": "12",
+           "expiryYear": "2025",
+           "network": "VISA"
+       },
+       "transactionDetails": {
+           "processorId": "stripe_123xyz",
+           "authorizationCode": "AUTH123",
+           "captureId": "CAP456"
+       }
+   },
+   "metadata": {
+       "correlationId": "corr-123-abc",
+       "merchantId": "MERCH-456", 
+       "source": "payment_service",
+       "environment": "prod",
+       "idempotencyKey": "PAY-123-456-2024-11-11-99.99"
+   }
+}
+
+# Send message - using paymentId as key for partitioning
+producer.send(
+   topic,
+   key=payment_event['payload']['paymentId'].encode('utf-8'),
+   value=payment_event
+)
+producer.flush()
+```
+---
+id: "Compile-Application-Flow"
+name: "User Compiles Application"
+version: "1.0.0"
+summary: "Flow when a user compiles the application"
+steps:
+  - id: "Compile-application" 
+    title: "On Compile - Generate Injection"
+    summary: "User Compiles application and classes will be generated"
+    actor:
+      name: "User or ci-cd pipeline"
+    next_steps: 
+      - id: "ProcessAllInjectorAnnotatedClasses"
+        label: "jj"
+      - id: "ProcessAllWebAnnotatedClasses"
+        label: "jj"
+      - id: "ProcessAllJsonAnnotatedClasses"
+        label: "jj"
+  - id: "ProcessAllInjectorAnnotatedClasses"
+    title: "Find All Annotated Classes For Injection"
+    summary: "Find All Annotated Classes For Injection"
+    message:
+      id: "ProcessAllInjectorAnnotatedClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "InjectorProcessorPort"
+  - id: "InjectorProcessorPort"
+    title: "InjectorProcessorPort"
+    summary: "Inject the messgage"
+    service:
+      id: "InjectorProcessorPort"
+      version: "0.0.1"      
+    next_step: 
+      id: "GenerateInjectorClasses"        
+  - id: "GenerateInjectorClasses"
+    title: "Generate Injector Class"
+    summary: "Try to generate injector"
+    message:
+      id: "GenerateInjectorClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "TemplatingPort"    
+
+
+
+
+
+  - id: "ProcessAllJsonAnnotatedClasses"
+    title: "Find All Annotated Classes For Json"
+    summary: "Find All Annotated Classes For Json"
+    message:
+      id: "ProcessAllJsonAnnotatedClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "JsonProcessorPort"
+  - id: "JsonProcessorPort"
+    title: "JsonProcessorPort"
+    summary: "Inject the messgage"
+    service:
+      id: "JsonProcessorPort"
+      version: "0.0.1"      
+    next_steps: 
+      - id: "GenerateJsonReader"        
+      - id: "GenerateJsonWriter"
+  - id: "GenerateJsonReader"
+    title: "Generate Json Reader"
+    summary: "Read Json"
+    message:
+      id: "GenerateJsonReader"
+      version: "0.0.1"   
+    next_step: 
+      id: "TemplatingPort"    
+  - id: "GenerateJsonWriter"
+    title: "Generate Json Writer"
+    summary: "Write Json"
+    message:
+      id: "GenerateJsonWriter"
+      version: "0.0.1"   
+    next_step: 
+      id: "TemplatingPort"    
+
+
+
+
+
+
+
+
+
+
+		
+  - id: "TemplatingPort"
+    title: "TemplatingPort"
+    summary: "Create Templates"
+    service:
+      id: "TemplatingPort"
+      version: "0.0.1"      
+    next_steps: 
+      - id: "MakeContentInjectorClassCommand" 
+      - id: "MakeContentEndpointHandlerClassCommand"
+      - id: "MakeContentRouteDispatcherCommand"
+      - id: MakeContentJsonReaderCommand
+      - id: MakeContentJsonWriterCommand
+
+  - id: "MakeContentInjectorClassCommand"
+    title: "Generate Injector Class"
+    summary: "Generate the content of the Injector"
+    message:
+      id: "MakeContentInjectorClassCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "WriteClassCommand"      
+  - id: "ProcessAllWebAnnotatedClasses"
+    title: "ProcessAllWebAnnotatedClasses"
+    summary: "ProcessAllWebAnnotatedClasses"
+    message:
+      id: "ProcessAllWebAnnotatedClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "WebservingProcessorPort"
+  - id: "WebservingProcessorPort"
+    title: "WebservingProcessorPort"
+    summary: "Webserving Processor Port"
+    service:
+      id: "WebservingProcessorPort"
+      version: "0.0.1"      
+    next_steps: 
+      - id: "GenerateDispatchClasses"  
+      - id: "GenerateEndpointClasses"
+
+  - id: "GenerateDispatchClasses"
+    title: "Generate Injector Class"
+    summary: "Try to generate injector"
+    message:
+      id: "GenerateDispatchClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "TemplatingPort" 
+  - id: "GenerateEndpointClasses"
+    title: "Generate Endpoint Class"
+    summary: "Try to generate injector"
+    message:
+      id: "GenerateEndpointClasses"
+      version: "0.0.1"   
+    next_step: 
+      id: "TemplatingPort" 
+  
+  - id: "MakeContentEndpointHandlerClassCommand"
+    title: "Generate Endpoint Handler Class"
+    summary: "Generate the emdpont handler"
+    message:
+      id: "MakeContentEndpointHandlerClassCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "WriteClassCommand"   
+  - id: "MakeContentRouteDispatcherCommand"
+    title: "MakeContentRouteDispatcherCommand"
+    summary: "MakeContentRouteDispatcherCommand"
+    message:
+      id: "MakeContentRouteDispatcherCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "WriteClassCommand"   
+
+
+  - id: "MakeContentJsonReaderCommand"
+    title: "Make Json Reader Command"
+    summary: "Make Json Reader Command"
+    message:
+      id: "MakeContentJsonReaderCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "WriteClassCommand" 
+
+  - id: "MakeContentJsonWriterCommand"
+    title: "Make Json Writer Command"
+    summary: "Make Json Writer Command"
+    message:
+      id: "MakeContentJsonWriterCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "WriteClassCommand" 
+  
+  - id: "WriteClassCommand"
+    title: "Write the command"
+    summary: "Generate the classes"
+    message:
+      id: "WriteClassCommand"
+      version: "0.0.1"   
+    next_step: 
+      id: "classesAreGenerated"   
+  - id: "classesAreGenerated"
+    title: "Classes Are generated"
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+<NodeGraph />
+
+# Application Compilation Flow
+
+## Overview
+
+This flow details the comprehensive compilation process that occurs when a user or CI/CD pipeline builds the application. The process involves annotation scanning, metadata processing, template-based code generation, and final class file creation across multiple domains including dependency injection, web serving, and JSON serialization.
+
+## Flow Characteristics
+
+- - **Template-Driven**: Uses standardized templates for consistent code generation
+- **Domain-Specific**: Handles injection, web serving, and JSON processing through specialized services
+- **Compile-Time Generation**: All code generation occurs during compilation for runtime efficiency
+
+<Footer/>
+

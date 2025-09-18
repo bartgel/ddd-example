@@ -1,0 +1,39 @@
+---
+id: GenerateDispatchClasses
+name: GenerateDispatchClasses
+version: 0.0.1
+summary: |
+  This class will on compile time generate classes to handle the dispatching of webrequests
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+This class will on compile time generate classes to handle the dispatching of webrequests
+
+<SchemaViewer file="schema.json" title="Schema" maxHeight="500" />
+
+<NodeGraph />
+
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "CancelShipment",
+    "description": "Schema for cancelling a shipment",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        }
+    },
+    "required": ["shipmentId"]
+}

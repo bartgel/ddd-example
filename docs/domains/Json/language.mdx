@@ -1,0 +1,156 @@
+---
+dictionary:
+  - id: Serialization
+    name: Serialization
+    summary: "The process of converting a Java object into a JSON string."
+    description: |
+      # Serialization
+
+      **Serialization** (or marshalling) is the process of translating the state of a Java object (its fields and their values) into a JSON string representation. This is typically done to transmit the object over a network or to store it in a file.
+
+      Your module performs this by inspecting a Java object's structure and writing out equivalent JSON key-value pairs.
+
+      ## Example
+      Converting a `User` object into a JSON string.
+      ```java
+      User user = new User("Alice", 30);
+      String json = serializer.serialize(user);
+      // Result: {"name": "Alice", "age": 30}
+      ```
+    icon: Export
+
+  - id: Deserialization
+    name: Deserialization
+    summary: "The process of converting a JSON string back into a Java object."
+    description: |
+      # Deserialization
+
+      **Deserialization** (or unmarshalling) is the reverse of **Serialization**. It is the process of parsing a JSON string and constructing a corresponding Java object, populating its fields with the values from the JSON.
+
+      This is the primary function of a **Parser**.
+
+      ## Example
+      Converting a JSON string into a `User` object.
+      ```java
+      String json = "{\"name\": \"Bob\", \"age\": 25}";
+      User user = parser.deserialize(json, User.class);
+      ```
+    icon: Import
+
+  - id: Parser
+    name: Parser
+    summary: "The component responsible for the Deserialization of a JSON string into a Java object."
+    description: |
+      # Parser
+
+      The **Parser** is the core component that reads a JSON string, tokenizes its contents, and constructs a live Java object based on the provided **Target Type**.
+
+      It must handle the mapping of JSON data types to Java types and may invoke a custom **Deserializer** for complex or custom types.
+
+      ## Responsibilities
+      - Validating JSON syntax.
+      - Reading JSON tokens (e.g., `{`, `}`, `key`, `value`).
+      - Instantiating the target Java class.
+      - Populating the object's fields with the parsed values.
+    icon: Code
+
+  - id: Serializer
+    name: Serializer
+    summary: "The component responsible for the Serialization of a Java object into a JSON string."
+    description: |
+      # Serializer
+
+      The **Serializer** is the core component that inspects a Java object, reads its field names and values, and writes a well-formatted JSON string.
+
+      It must handle the mapping of Java types to JSON data types and may invoke a custom **Serializer** for complex or special types.
+
+      ## Responsibilities
+      - Inspecting an object's fields (via reflection or other means).
+      - Converting field values to their JSON equivalents (e.g., String, Number, Boolean).
+      - Handling circular references and null values.
+      - Writing the final, valid JSON string.
+    icon: FileText
+
+  - id: TargetType
+    name: Target Type
+    summary: "The Java Class object that specifies the type of object to create during Deserialization."
+    description: |
+      # Target Type
+
+      The **Target Type** is the blueprint the **Parser** uses during **Deserialization**. It is the `Class<T>` object (e.g., `User.class`, `List.class`) that tells the parser what kind of object to instantiate and populate.
+
+      This is a critical parameter, as the same JSON object could be deserialized into different Java types.
+
+      ## Example
+      The same JSON array could be a **Target Type** of `List<String>` or `String[]`.
+      ```java
+      String json = "[\"a\", \"b\", \"c\"]";
+      List<String> list = parser.deserialize(json, List.class);
+      String[] array = parser.deserialize(json, String[].class);
+      ```
+    icon: Crosshair
+
+  - id: JsonElement
+    name: JSON Element
+    summary: "A generic representation of any valid JSON value, often used during intermediate parsing steps."
+    description: |
+      # JSON Element
+
+      A **JSON Element** is a generic, in-memory representation of a value parsed from a JSON string before it is converted into a specific Java object. It is often part of a tree model of the JSON data (e.g., `JsonObject`, `JsonArray`, `JsonPrimitive`).
+
+      This is useful for dynamically inspecting JSON without knowing the **Target Type** in advance, or for manipulating the JSON structure programmatically.
+
+      ## Common Types
+      - `JsonObject`: Represents a JSON object `{...}` (key-value pairs).
+      - `JsonArray`: Represents a JSON array `[...]` (ordered list of values).
+      - `JsonPrimitive`: Represents a JSON primitive value (String, Number, Boolean).
+    icon: Stack
+
+  - id: FieldMapping
+    name: Field Mapping
+    summary: "The strategy for matching JSON keys to Java object field names during Serialization and Deserialization."
+    description: |
+      # Field Mapping
+
+      **Field Mapping** defines the rules for how the names of keys in the JSON data correlate to the names of fields in the Java object. The default strategy is often a direct match, but it can be configured to handle differences in naming conventions.
+
+      ## Common Strategies
+      - **Direct:** JSON key `"firstName"` maps to Java field `firstName`.
+      - **Custom Annotation:** Using an annotation like `@JsonField("first_name")` to specify the JSON key.
+      - **Naming Convention:** Automatically converting between cases (e.g., `camelCase` in Java to `snake_case` in JSON).
+      ```java
+      public class User {
+          @JsonField("full_name") // Custom field mapping
+          private String name;
+      }
+      ```
+    icon: GitCompare
+
+  - id: TypeAdapter
+    name: Type Adapter
+    summary: "A custom handler for Serializing or Deserializing specific types that the default logic cannot handle."
+    description: |
+      # Type Adapter
+
+      A **Type Adapter** (or Custom **Serializer**/**Deserializer**) is a class that provides custom logic for converting complex or non-standard Java types to and from JSON. It is registered with the **Parser** and **Serializer** to handle types that fall outside of their default capabilities.
+
+      This is essential for types like `LocalDateTime`, custom enums, or classes with complex construction logic.
+
+      ## Example
+      An adapter tells the system how to convert a `LocalDate` to a JSON string and back.
+      ```java
+      public class LocalDateAdapter implements TypeAdapter<LocalDate> {
+          @Override
+          public LocalDate deserialize(String jsonValue) {
+              return LocalDate.parse(jsonValue);
+          }
+
+          @Override
+          public String serialize(LocalDate value) {
+              return value.toString();
+          }
+      }
+      // Register it: parser.registerAdapter(LocalDate.class, new LocalDateAdapter());
+      ```
+    icon: Settings
+---

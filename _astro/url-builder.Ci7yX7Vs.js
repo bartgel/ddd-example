@@ -1,0 +1,1 @@
+const c=e=>e.replace(/\/+/g,"/"),i=(e,s=!1,t=!1)=>{let n=e;return t||(n=`/ddd-example/${e}`),c(n)},o=(e,s)=>{const t=Object.entries(s).filter(([a,r])=>r!==void 0&&r!=="").reduce((a,[r,l])=>({...a,[r]:l}),{});if(Object.keys(t).length===0)return i(e);const n=Object.entries(t).map(([a,r])=>`${a}=${r}`).join("&");return`${i(e)}?${n}`},d=e=>e+".mdx";export{i as a,o as b,d as t};

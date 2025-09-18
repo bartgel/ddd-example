@@ -1,0 +1,53 @@
+# Services 
+
+
+## [InjectorProcessorPort - 0.0.1](https://bartgel.github.io/docs/services/InjectorProcessorPort/0.0.1.mdx) - Service that evalutates dependencies
+
+  ## Sends
+    - [GenerateInjectorClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateInjectorClasses/0.0.1.mdx) - This class will on compile time generate classes to handle dependency injection
+
+  ## Receives
+    - [ProcessAllInjectorAnnotatedClasses - 0.0.1](https://bartgel.github.io/docs/events/ProcessAllInjectorAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with the needed annotations
+
+## [JsonProcessorPort - 0.0.1](https://bartgel.github.io/docs/services/JsonProcessorPort/0.0.1.mdx) - Service that evalutates the json processor
+
+  ## Sends
+    - [GenerateJsonReader - 0.0.1](https://bartgel.github.io/docs/events/GenerateJsonReader/0.0.1.mdx) - This class will Generate the json Reader
+    - [GenerateJsonWriter - 0.0.1](https://bartgel.github.io/docs/events/GenerateJsonWriter/0.0.1.mdx) - This class will Generate the json Writer
+
+  ## Receives
+    - [ProcessAllJsonAnnotatedClasses - 0.0.1](https://bartgel.github.io/docs/events/ProcessAllJsonAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with JsonObject
+## [LightWebServer - 0.0.1](https://bartgel.github.io/docs/services/LightWebServer/0.0.1.mdx) - Service that starts the webservice
+
+  ## Sends
+    - [WebServiceStarted - 0.0.1](https://bartgel.github.io/docs/events/WebServiceStarted/0.0.1.mdx) - The webservice is started with succes
+    - [Error - Starting Webservice - 0.0.1](https://bartgel.github.io/docs/events/WebServiceCouldNotBeStarted/0.0.1.mdx) - The webservice could not be started
+
+  ## Receives
+    - [Run webservice - 0.0.1](https://bartgel.github.io/docs/events/RunWebService/0.0.1.mdx) - Run webservice
+
+## [TemplatingPort - 0.0.1](https://bartgel.github.io/docs/services/TemplatingPort/0.0.1.mdx) - All templating passes through this port
+
+  ## Sends
+    - [MakeContentEndpointHandlerClassCommand - 0.0.1](https://bartgel.github.io/docs/events/MakeContentEndpointHandlerClassCommand/0.0.1.mdx) - On compiletime: this class wil generate the content for the diffent endpoint handlers
+    - [MakeContentInjectorClassCommand - 0.0.1](https://bartgel.github.io/docs/events/MakeContentInjectorClassCommand/0.0.1.mdx) - On compiletime: this class wil generate the content for the injector
+    - [MakeContentRouteDispatcherCommand - 0.0.1](https://bartgel.github.io/docs/events/MakeContentRouteDispatcherCommand/0.0.1.mdx) - On compiletime: this class will generate the route dispatcher.
+    - [MakeContentJsonReaderCommand - 0.0.1](https://bartgel.github.io/docs/events/MakeContentJsonReaderCommand/0.0.1.mdx) - On compiletime: this class will generate the Json Reader
+    - [MakeContentJsonWriterCommand - 0.0.1](https://bartgel.github.io/docs/events/MakeContentJsonWriterCommand/0.0.1.mdx) - On compiletime: this class will generate the Json Writer
+    - [WriteClassCommand - 0.0.1](https://bartgel.github.io/docs/events/WriteClassCommand/0.0.1.mdx) - On compiletime: this class is used to write to the classpath
+
+  ## Receives
+    - [GenerateInjectorClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateInjectorClasses/0.0.1.mdx) - This class will on compile time generate classes to handle dependency injection
+    - [GenerateEndpointClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateEndpointClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the diffent endpoints. For each endpont a class wil be generated, it will dispatch the GET, POST, PUT, DELETE and PATCH actions.
+    - [GenerateDispatchClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateDispatchClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the dispatching of webrequests
+    - [GenerateJsonReader - 0.0.1](https://bartgel.github.io/docs/events/GenerateJsonReader/0.0.1.mdx) - This class will Generate the json Reader
+    - [GenerateJsonWriter - 0.0.1](https://bartgel.github.io/docs/events/GenerateJsonWriter/0.0.1.mdx) - This class will Generate the json Writer
+
+## [WebservingProcessorPort - 0.0.1](https://bartgel.github.io/docs/services/WebservingProcessorPort/0.0.1.mdx) - Service that processes the web annotated classes
+
+  ## Sends
+    - [GenerateDispatchClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateDispatchClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the dispatching of webrequests
+    - [GenerateEndpointClasses - 0.0.1](https://bartgel.github.io/docs/events/GenerateEndpointClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the diffent endpoints. For each endpont a class wil be generated, it will dispatch the GET, POST, PUT, DELETE and PATCH actions.
+
+  ## Receives
+    - [ProcessAllWebAnnotatedClasses - 0.0.1](https://bartgel.github.io/docs/events/ProcessAllWebAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with the needed annotations

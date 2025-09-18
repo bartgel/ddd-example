@@ -1,0 +1,1 @@
+import{s as o}from"./client.DlQZmaUW.js";const i=document.querySelectorAll(".provider-login-btn");i.forEach(e=>{const r=e.getAttribute("data-provider");if(r){let t=r==="entra"?"microsoft-entra-id":r;e.addEventListener("click",()=>o(t))}});

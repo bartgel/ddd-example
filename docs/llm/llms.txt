@@ -1,0 +1,99 @@
+# DDD example EventCatalog Documentation
+
+> This internal platform provides a comprehensive view of our event-driven architecture across all systems. Use this portal to discover existing domains, explore services and their dependencies, and understand the message contracts that connect our infrastructure
+
+## Events
+
+
+## Commands
+- [ProcessAllInjectorAnnotatedClasses - ProcessAllInjectorAnnotatedClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/ProcessAllInjectorAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with the needed annotations
+- [GenerateDispatchClasses - GenerateDispatchClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/GenerateDispatchClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the dispatching of webrequests
+- [ProcessAllJsonAnnotatedClasses - ProcessAllJsonAnnotatedClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/ProcessAllJsonAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with JsonObject- [GenerateEndpointClasses - GenerateEndpointClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/GenerateEndpointClasses/0.0.1.mdx) - This class will on compile time generate classes to handle the diffent endpoints. For each endpont a class wil be generated, it will dispatch the GET, POST, PUT, DELETE and PATCH actions.
+- [GenerateInjectorClasses - GenerateInjectorClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/GenerateInjectorClasses/0.0.1.mdx) - This class will on compile time generate classes to handle dependency injection
+- [GenerateJsonReader - GenerateJsonReader - 0.0.1 ](https://bartgel.github.io/docs/commands/GenerateJsonReader/0.0.1.mdx) - This class will Generate the json Reader
+- [GenerateJsonWriter - GenerateJsonWriter - 0.0.1 ](https://bartgel.github.io/docs/commands/GenerateJsonWriter/0.0.1.mdx) - This class will Generate the json Writer
+- [MakeContentEndpointHandlerClassCommand - MakeContentEndpointHandlerClassCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/MakeContentEndpointHandlerClassCommand/0.0.1.mdx) - On compiletime: this class wil generate the content for the diffent endpoint handlers
+- [MakeContentInjectorClassCommand - MakeContentInjectorClassCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/MakeContentInjectorClassCommand/0.0.1.mdx) - On compiletime: this class wil generate the content for the injector
+- [MakeContentJsonWriterCommand - MakeContentJsonWriterCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/MakeContentJsonWriterCommand/0.0.1.mdx) - On compiletime: this class will generate the Json Writer
+- [MakeContentJsonReaderCommand - MakeContentJsonReaderCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/MakeContentJsonReaderCommand/0.0.1.mdx) - On compiletime: this class will generate the Json Reader
+- [MakeContentRouteDispatcherCommand - MakeContentRouteDispatcherCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/MakeContentRouteDispatcherCommand/0.0.1.mdx) - On compiletime: this class will generate the route dispatcher.
+- [WriteClassCommand - WriteClassCommand - 0.0.1 ](https://bartgel.github.io/docs/commands/WriteClassCommand/0.0.1.mdx) - On compiletime: this class is used to write to the classpath
+- [Run webservice - RunWebService - 0.0.1 ](https://bartgel.github.io/docs/commands/RunWebService/0.0.1.mdx) - Run webservice
+- [Error - Starting Webservice - WebServiceCouldNotBeStarted - 0.0.1 ](https://bartgel.github.io/docs/commands/WebServiceCouldNotBeStarted/0.0.1.mdx) - The webservice could not be started
+- [WebServiceStarted - WebServiceStarted - 0.0.1 ](https://bartgel.github.io/docs/commands/WebServiceStarted/0.0.1.mdx) - The webservice is started with succes
+- [ProcessAllWebAnnotatedClasses - ProcessAllWebAnnotatedClasses - 0.0.1 ](https://bartgel.github.io/docs/commands/ProcessAllWebAnnotatedClasses/0.0.1.mdx) - Process all classes that are annotated with the needed annotations
+
+
+## Queries
+
+
+## Services
+- [InjectorProcessorPort - InjectorProcessorPort - 0.0.1 ](https://bartgel.github.io/docs/services/InjectorProcessorPort/0.0.1.mdx) - Service that evalutates dependencies
+- [JsonProcessorPort - JsonProcessorPort - 0.0.1 ](https://bartgel.github.io/docs/services/JsonProcessorPort/0.0.1.mdx) - Service that evalutates the json processor
+- [TemplatingPort - TemplatingPort - 0.0.1 ](https://bartgel.github.io/docs/services/TemplatingPort/0.0.1.mdx) - All templating passes through this port
+- [LightWebServer - LightWebServer - 0.0.1 ](https://bartgel.github.io/docs/services/LightWebServer/0.0.1.mdx) - Service that starts the webservice
+- [WebservingProcessorPort - WebservingProcessorPort - 0.0.1 ](https://bartgel.github.io/docs/services/WebservingProcessorPort/0.0.1.mdx) - Service that processes the web annotated classes
+
+
+## Domains
+- [Application - Application - 1.0.0 ](https://bartgel.github.io/docs/domains/Application/1.0.0.mdx) - [Example Controller Port - Controller - 1.0.0 ](https://bartgel.github.io/docs/domains/Controller/1.0.0.mdx) - [Infrastructure - Infrastructure - 1.0.0 ](https://bartgel.github.io/docs/domains/Infrastructure/1.0.0.mdx) - [Injector - Injector - 0.0.1 ](https://bartgel.github.io/docs/domains/Injector/0.0.1.mdx) - [Json - Json - 0.0.1 ](https://bartgel.github.io/docs/domains/Json/0.0.1.mdx) - [Templating - Templating - 0.0.1 ](https://bartgel.github.io/docs/domains/Templating/0.0.1.mdx) - [WebServing - WebServing - 0.0.1 ](https://bartgel.github.io/docs/domains/WebServing/0.0.1.mdx) 
+
+## Flows
+- [User Compiles Application - Compile-Application-Flow - 1.0.0 ](https://bartgel.github.io/docs/flows/Compile-Application-Flow/1.0.0.mdx) - Flow when a user compiles the application
+
+## Channels
+- [Inventory Events Channel - inventory.{env}.events - 1.0.0 - protocol - kafka](https://bartgel.github.io/docs/channels/inventory.{env}.events/1.0.0.mdx) - Central event stream for all inventory-related events including stock updates, allocations, and adjustments
+- [Order Events Channel - orders.{env}.events - 1.0.1 - protocol - kafka](https://bartgel.github.io/docs/channels/orders.{env}.events/1.0.1.mdx) - Central event stream for all order-related events in the order processing lifecycle
+- [Payment Events Channel - payments.{env}.events - 1.0.0 - protocol - kafka](https://bartgel.github.io/docs/channels/payments.{env}.events/1.0.0.mdx) - All events contain payment ID for traceability and ordered processing.
+
+## Ubiquitous Language
+- Injector Domain
+    - [Dependency: - A service, component, or value that a class requires to function.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Injection: - The process of providing a Dependency to a class that requires it.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Singleton: - A lifecycle strategy where a single instance of a Dependency is created and reused for all requests.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Scope: - A defined lifecycle context that governs the reuse and lifetime of resolved Dependencies.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Resolution: - The process by which the Container finds or creates the concrete instance of a requested Dependency.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Container: - The central component that manages Dependencies, their Scopes, and performs Injection and Resolution.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+    - [Binding: - The configuration that tells the Container how to resolve an abstraction to a concrete implementation.](https://bartgel.github.io/docs/domains/Injector/language.mdx)
+- Json Domain
+    - [Serialization: - The process of converting a Java object into a JSON string.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Deserialization: - The process of converting a JSON string back into a Java object.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Parser: - The component responsible for the Deserialization of a JSON string into a Java object.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Serializer: - The component responsible for the Serialization of a Java object into a JSON string.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Target Type: - The Java Class object that specifies the type of object to create during Deserialization.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [JSON Element: - A generic representation of any valid JSON value, often used during intermediate parsing steps.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Field Mapping: - The strategy for matching JSON keys to Java object field names during Serialization and Deserialization.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+    - [Type Adapter: - A custom handler for Serializing or Deserializing specific types that the default logic cannot handle.](https://bartgel.github.io/docs/domains/Json/language.mdx)
+- Templating Domain
+    - [Template: - A blueprint containing static text and placeholders.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Placeholder: - A marker in a template indicating where to insert dynamic data.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Rendering: - The complete process of producing final output from a template and data.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Variable Substitution: - The process of replacing a placeholder with a concrete value.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Template Engine: - The component that executes the rendering process.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Code Generation: - The act of automatically producing source code from a higher-level definition or model, using Templates.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+    - [Template Data / Model: - The structured input data used for variable substitution during rendering.](https://bartgel.github.io/docs/domains/Templating/language.mdx)
+- WebServing Domain
+    - [Route: - A mapping between an HTTP endpoint and the code that handles requests to it.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Endpoint: - A unique URL that represents a specific resource or function provided by the API.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Request Handler: - The code responsible for processing an incoming HTTP request and generating an HTTP response.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Middleware: - Software that intercepts and processes HTTP requests and responses in a chain.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Response: - The output an HTTP server sends back to a client, containing a status, headers, and a body.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Request: - An incoming message from a client asking the server to perform an operation.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [HTTP Method: - The verb (e.g., GET, POST) that defines the action for a request.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+    - [Dispatcher / Router: - The component that matches an incoming request's method and path to the correct Route and Request Handler.](https://bartgel.github.io/docs/domains/WebServing/language.mdx)
+
+## Entities
+- Injector Domain
+    - [DependencyInjectorData](https://bartgel.github.io/docs/entities/DependencyInjectorData/1.0.0.mdx) - Represents the dependencies we are going to inject at runtime
+- Json Domain
+    - [DependencyInjectorData](https://bartgel.github.io/docs/entities/DependencyInjectorData/1.0.0.mdx) - Represents the dependencies we are going to inject at runtime
+- Templating Domain
+    - [TemplateSettings](https://bartgel.github.io/docs/entities/TemplateSettings/1.0.0.mdx) - Represents the template we are going to use to generate classes at compiletime.
+- WebServing Domain
+    - [WebserverConfiguration](https://bartgel.github.io/docs/entities/WebServerConfiguration/1.0.0.mdx) - Represents the template we are going to use to generate classes at compiletime.
+
+## Teams
+- [Paradigma](https://bartgel.github.io/docs/teams/Paradigma.mdx) - Paradigma Digital
+
+## Users
+- [bgeluykens](https://bartgel.github.io/docs/users/bgeluykens.mdx) - Bart Geluykens

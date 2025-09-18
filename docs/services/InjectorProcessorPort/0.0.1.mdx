@@ -1,0 +1,36 @@
+---
+id: InjectorProcessorPort
+version: 0.0.1
+name: InjectorProcessorPort
+summary: |
+  Service that evalutates dependencies
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: ProcessAllInjectorAnnotatedClasses
+sends:
+  - id: GenerateInjectorClasses
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+At Compile time, this will generated classes to handle dependency injection
+
+### Core features
+
+This is the Injector processer
+
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />

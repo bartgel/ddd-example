@@ -1,0 +1,41 @@
+---
+id: WebServiceCouldNotBeStarted
+name: Error - Starting Webservice
+version: 0.0.1
+summary: |
+  The webservice could not be started
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+We could not start the webservice
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "DeliveryFailed",
+    "description": "Schema for delivery failed event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}

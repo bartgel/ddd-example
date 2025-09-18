@@ -1,0 +1,40 @@
+---
+id: JsonProcessorPort
+version: 0.0.1
+name: JsonProcessorPort
+summary: |
+  Service that evalutates the json processor
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: ProcessAllJsonAnnotatedClasses
+sends:
+  - id: GenerateJsonReader
+  - id: GenerateJsonWriter
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+This is the json processor
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />

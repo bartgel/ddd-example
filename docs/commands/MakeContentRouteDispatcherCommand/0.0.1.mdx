@@ -1,0 +1,67 @@
+---
+id: MakeContentRouteDispatcherCommand
+name: MakeContentRouteDispatcherCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the route dispatcher.
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the route dispatcher.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+import com.bart.example.infrastructure.webserving.handlers.RouteDispatcher;  
+import com.bart.example.infrastructure.webserving.handlers.AbstractContextHandler;  
+import static com.bart.example.infrastructure.webserving.services.PathComparatorUtil.*;  
+import java.util.Optional;  
+  
+public class InternalRouteDispatcher extends RouteDispatcher {  
+   @Override  
+   public Optional<AbstractContextHandler> getHandler(String urlPath) {  
+       String path = removeTrailingSlash(urlPath);  
+       int pathHash = path.hashCode();  
+          switch (pathHash) {  
+       case 1457148729: return Optional.of(UsersContextHandler.getInstance());  
+  
+             default:  
+                       if (pathsMatch("/users/{id}",path)) return Optional.of(UsersParamIdContextHandler.getInstance());  
+  
+                return Optional.empty();  
+       }  
+   }  
+}
+```
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}

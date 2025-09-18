@@ -1,0 +1,42 @@
+---
+id: LightWebServer
+version: 0.0.1
+name: LightWebServer
+summary: |
+  Service that starts the webservice
+owners:
+  - bgeluykens
+  - Paradigma
+receives:
+  - id: RunWebService
+sends:
+  - id: WebServiceStarted
+  - id: WebServiceCouldNotBeStarted
+repository:
+  language: Java
+  url: https://github.com/event-catalog/pretend-shipping-service
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+The entry point for our Light weight webservice
+
+
+<Tiles >
+    <Tile icon="BoltIcon" href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Sends ${frontmatter.sends.length} messages`} description="This service sends messages to downstream consumers" />
+    <Tile icon="BoltIcon"  href={`/visualiser/services/${frontmatter.id}/${frontmatter.version}`} title={`Receives ${frontmatter.receives.length} messages`} description="This service receives messages from other services" />
+</Tiles>
+
+### Core features
+
+
+
+## Architecture diagram 
+
+<NodeGraph />
+
+<MessageTable format="all" limit={4} />
+
+<Footer />

@@ -1,0 +1,71 @@
+---
+id: MakeContentJsonReaderCommand
+name: MakeContentJsonReaderCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class will generate the Json Reader
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+On compiletime. This class will generate the Json Reader.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+## Example Output
+
+```java
+public class JsonReader extends AbstractReaderParser {  
+    public com.bart.example.model.User toUser(String jsonString) {  
+        if (isNull(jsonString)) return null;  
+        com.bart.example.model.User obj = new com.bart.example.model.User();  
+        return fromJson( obj, jsonString, (key,value) -> setFieldValue(obj, key, value));  
+    }  
+  
+   private void setFieldValue(com.bart.example.model.User obj, String key, String value) {  
+       if (isNull(value)) return;  
+       switch (key) {  
+           case "name" :  
+             obj.setName(toSTRING(value));  
+             return;  
+  
+           case "age" :  
+             obj.setAge(toINTEGER(value));  
+             return;  
+  
+          default:  
+            return;  
+       }  
+   }  
+ 
+}
+```
+
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}

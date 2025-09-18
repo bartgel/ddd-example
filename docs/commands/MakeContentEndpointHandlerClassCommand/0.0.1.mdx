@@ -1,0 +1,70 @@
+---
+id: MakeContentEndpointHandlerClassCommand
+name: MakeContentEndpointHandlerClassCommand
+version: 0.0.1
+summary: |
+  On compiletime: this class wil generate the content for the diffent endpoint handlers
+owners:
+  - bgeluykens
+  - Paradigma
+schemaPath: schema.json
+---
+
+import Footer from '@catalog/components/footer.astro';
+
+## Overview
+
+We could succesfully generate runtime classes.
+
+<NodeGraph />
+
+<SchemaViewer file="schema.json" title="JSON Schema" maxHeight="500" />
+
+an example of a generated class
+
+```java
+public class UsersContextHandler extends AbstractContextHandler {  
+   private final static UsersContextHandler INSTANCE = new UsersContextHandler();  
+  
+   public static UsersContextHandler getInstance () {  
+     return INSTANCE;  
+   }  
+  
+   private UsersContextHandler() {  
+     super();  
+   }  
+  @Override  
+  protected void handleGET(HttpExchange exchange) throws IOException {  
+    String string = CompileTimeDIContainer.getUserController().getUsers(exchange);  
+    sendResponse(exchange, 200, string);  
+  }  
+  
+  
+  @Override  
+  protected void handlePOST(HttpExchange exchange) throws IOException {  
+    String string = CompileTimeDIContainer.getUserController().createUser(exchange);  
+    sendResponse(exchange, 200, string);  
+  }  
+  
+}
+```
+
+ ## Raw Schema:schema.json
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "title": "ReturnInitiated",
+    "description": "Schema for return initiated event",
+    "properties": {
+        "shipmentId": {
+            "type": "string",
+            "description": "Unique identifier for the shipment"
+        },
+        "orderId": {
+            "type": "string",
+            "description": "Identifier for the associated order"
+        }
+    },
+    "required": ["shipmentId", "orderId"]
+}
